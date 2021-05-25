@@ -1,3 +1,10 @@
+---
+title:  "알고리즘 공부"
+excerpt: "대학공개강의 KOCW에서 알고리즘 강의를 들어보았다."
+ 
+date: 2021-05-19
+last_modified_at: 2021-05-25
+---
 # Algorithm
 
 **알고리즘** : 문제 해결을 위한 전략 (Strategy to solve problem)
