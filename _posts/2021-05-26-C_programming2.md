@@ -250,31 +250,115 @@ int main(void) {
 단어를 입력받고 길이를 출력하는 프로그램
 
 ```c
-#include<stdio.h>int main(void) {	char str[50];	int i;		printf("영어단어를 입력하세요 : ");	scanf("%s", str);		for(i=0; i<50; i++){		if( str[i] == '\0')			break;	}	printf("%s 의 길이는 %d", str, i);		return 0;}
+#include<stdio.h>
+
+int main(void) {	
+  char str[50];
+  int i;		
+  
+  printf("영어단어를 입력하세요 : ");	
+  scanf("%s", str);		
+  
+  for(i=0; i<50; i++){		
+    if( str[i] == '\0')			
+    break;	
+  }	
+  printf("%s 의 길이는 %d", str, i);		
+  return 0;
+}
 ```
 
 단어를 입력받고 단어를 뒤집어보자
 
 ```c
-#include<stdio.h>int main(void) {	char str[50], temp;	int i, j;		printf("영어단어를 입력하세요 : ");	scanf("%s", str);		for(i=0; i<50; i++){  // while( str[i] != 0) i++; 로 대체할 수 있다.		if( str[i] == '\0')			break;	}	i--; // for문을 탈출한 후 i는 null문자의 인덱스 i--는 마지막 문자의 인덱스		for(j=0; j<i/2;j++) {		temp = str[j];		str[j] = str[i-j];		str[i-j]= temp;	} 	printf("%s ", str);		return 0;}
+#include<stdio.h>
+
+int main(void) {	
+  char str[50], temp;	
+  int i, j;		
+  
+  printf("영어단어를 입력하세요 : ");	
+  scanf("%s", str);		
+  
+  for(i=0; i<50; i++){  // while( str[i] != 0) i++; 로 대체할 수 있다.		
+    if( str[i] == '\0')			
+      break;	
+  }	
+  i--; // for문을 탈출한 후 i는 null문자의 인덱스 i--는 마지막 문자의 인덱스		
+  for(j=0; j<i/2;j++) {		
+      temp = str[j];		
+      str[j] = str[i-j];		
+      str[i-j]= temp;
+  } 	
+  printf("%s ", str);		
+  return 0;
+}
 ```
 
 단어를 입력받고 아스키 코드값이 가장 큰 문자를 출력하는 프로그램
 
 ```c
-#include<stdio.h>int main(void) {	char str[50], temp;	int i=0, j, max=0;		printf("영어단어를 입력하세요 : ");	scanf("%s", str);		while( str[i] != '\0') 		i++;		for(j=0; j<i; j++) {		if(max < str[j])			max = str[j];	}	 	printf("%d", i);	printf("%s 중 아스키 코드값이 가장 큰 단어는 %c\n", str, max);		return 0;}
+#include<stdio.h>
+
+int main(void) {	
+  char str[50], temp;	
+  int i=0, j, max=0;		
+  
+  printf("영어단어를 입력하세요 : ");	
+  scanf("%s", str);		
+  
+  while( str[i] != '\0') 		
+    i++;		
+  for(j=0; j<i; j++) {		
+    if(max < str[j])			
+      max = str[j];	
+  }	 	
+  printf("%d", i);	
+  printf("%s 중 아스키 코드값이 가장 큰 단어는 %c\n", str, max);		
+  
+  return 0;
+}
 ```
 
 정수형 변수 두개 선언하고 포인터로 가리키고 값을 수정하고 포인터가 가리키는 값을 서로 바꾸고 출력하기
 
 ```c
-#include<stdio.h>int main(void) {	int num1 = 10, num2 = 20, tmp =0 ;	int *ptr1 = &num1, *ptr2 = &num2;		*ptr1 += 10; // num1 += 10;	*ptr2 -= 10; // num2 -= 10;	    // ptr1 = &num2, ptr2 = &num1;	tmp = ptr1; 	ptr1 = ptr2;	ptr2 = tmp;		printf("ptr1 : %d num1 : %d\nptr2 : %d num2 : %d", *ptr1, num1, *ptr2, num2);		return 0;}
+#include<stdio.h>
+
+int main(void) {	
+  int num1 = 10, num2 = 20, tmp =0 ;	
+  int *ptr1 = &num1, *ptr2 = &num2;		
+  
+  *ptr1 += 10; // num1 += 10;	
+  *ptr2 -= 10; // num2 -= 10;	    
+  
+  // ptr1 = &num2, ptr2 = &num1;	
+  tmp = ptr1; 	
+  ptr1 = ptr2;	
+  ptr2 = tmp;		
+  printf("ptr1 : %d num1 : %d\nptr2 : %d num2 : %d", *ptr1, num1, *ptr2, num2);		
+  
+  return 0;
+}
 ```
 
 다음 코드의 출력 결과 예상
 
 ```c
-#include<stdio.h>int main(void) {	int num = 10;	int * ptr1 = &num;	int * ptr2 = ptr1;		(*ptr1)++;	(*ptr2)++;	printf("%d\n", num);	return 0;}
+#include<stdio.h>
+
+int main(void) {	
+  int num = 10;	
+  int * ptr1 = &num;	
+  int * ptr2 = ptr1;		
+  
+  (*ptr1)++;	
+  (*ptr2)++;	
+  
+  printf("%d\n", num);	
+  
+  return 0;
+}
 ```
 
 내 생각 : ptr2 가 ptr1을 가리킨다고 생각했다. (*ptr2)++; 의 실행결과로 ptr1이 가리키는 주소가 변경될거라고 생각했다.  최종적으로 num의 값은 11이 될 줄 알았다.
@@ -288,18 +372,62 @@ int main(void) {
 길이가 5인 배열를 1, 2, 3, 4, 5로 초기화하고 배열의 첫번째 요소를 가리키는 포인터 변수 ptr을 선언한다. 그 다음 포인터 변수 ptr에 저장된 값을 증가시키는 방식으로 배열 요소에 접근하면서 모든 요소에 2를 더한 뒤 정상적으로 증가가 이루어졌는지 확인해라.
 
 ```c
-#include<stdio.h>int main(void) {	int arr[5] = {1, 2, 3, 4, 5};	int * ptr = arr; // ptr = &arr[0];	int i=0;		for(i=0; i < 5 ; i++) {		*(ptr+i) += 2; // *(ptr++) += 2;	}	for(i=0; i < 5 ; i++) {		printf("%d ", arr[i]); //arr[i] = *(ptr+i)	}		return 0;}
+#include<stdio.h>
+
+int main(void) {	
+  int arr[5] = {1, 2, 3, 4, 5};	
+  int * ptr = arr; // ptr = &arr[0];	
+  int i=0;		
+  
+  for(i=0; i < 5 ; i++) 
+    *(ptr+i) += 2; // *(ptr++) += 2;	
+  for(i=0; i < 5 ; i++) 
+    printf("%d ", arr[i]); //arr[i] = *(ptr+i)	
+  
+  return 0;
+}
 ```
 
 길이가 6인 int형 배열을 선언하고 1, 2, 3, 4, 5, 6으로 초기화한 다음 배열에 저장된 값이 6, 5, 4, 3, 2, 1이 되도록 변경하는 프로그램을 만들어보자. 배열의 앞 뒤를 가리키는 포인터 변수 두개를 선언하고 이를 활용해 저장된 값의 순서를 바꿔야한다.
 
 ```c
-#include<stdio.h>int main(void) {	int arr[6] = {1, 2, 3, 4, 5, 6};	int * ptr1 = &arr[5], *ptr2 = &arr[0];	int i, tmp;		for(i=0; i<3; i++) {		tmp = *(ptr1-i);		*(ptr1-i) = *(ptr2+i);		*(ptr2+i) = tmp;	}	for(i=0;i<6;i++)		printf("%d ", arr[i]);		return 0;}
+#include<stdio.h>
+
+int main(void) {	
+  int arr[6] = {1, 2, 3, 4, 5, 6};	
+  int * ptr1 = &arr[5], *ptr2 = &arr[0];	
+  int i, tmp;		
+  
+  for(i=0; i<3; i++) {		
+    tmp = *(ptr1-i);		
+    *(ptr1-i) = *(ptr2+i);		
+    *(ptr2+i) = tmp;	
+  }	
+  for(i=0;i<6;i++)		
+    printf("%d ", arr[i]);		
+  
+  return 0;
+}
 ```
 
 call by value , call by reference
 
 ```c
-#include<stdio.h>int squareByValue(int num) {	return num * num;}void squareByReference(int * ptr) {	*ptr *= *ptr;}int main(void) {	int num = 2, rbv;	rbv = squareByValue(num);	squareByReference(&num);		printf("num : %d cbv : %d cbr : %d\n", num, rbv);		return 0;}
+#include<stdio.h>
+int squareByValue(int num) {	
+  return num * num;
+}
+void squareByReference(int * ptr) {	
+  *ptr *= *ptr;
+}
+int main(void) {	
+  int num = 2, rbv;	
+  
+  rbv = squareByValue(num);	
+  squareByReference(&num);		
+  printf("num : %d cbv : %d cbr : %d\n", num, rbv);		
+  
+  return 0;
+}
 ```
 
