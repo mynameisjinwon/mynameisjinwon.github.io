@@ -1,6 +1,11 @@
 ---
 title:  "열혈 C 프로그래밍 문제2"
 excerpt: "열혈 C 프로그래밍 책에 있는 프로그래밍 문제를 풀어보았다. 2 "
+
+categories:
+  - C
+tags:
+  - C
  
 date: 2021-05-26
 last_modified_at: 2021-05-26
