@@ -192,9 +192,8 @@ int main(void) {
 			arr[i][j] = (i+2) * (j+1);
 	}
 	for(i=0; i<3; i++) {
-		for(j=0; j<9;j++) {
+		for(j=0; j<9;j++) 
 			printf("%d ", arr[i][j]);
-		}
 		printf("\n");
 	}
 	
