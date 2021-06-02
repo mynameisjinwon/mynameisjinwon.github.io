@@ -6,8 +6,6 @@ categories:
   - C
 tags:
   - C
-  - 벌써6월
-  - omg
  
 date: 2021-06-01
 last_modified_at: 2021-06-01
