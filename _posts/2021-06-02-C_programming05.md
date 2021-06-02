@@ -147,25 +147,32 @@ int main(void) {
 답지를 보았다. 너무 충격적이다. 답지는 2초 내가 짠 코드는 4초나 걸렸다. 시간을 안재봐도 내가 짠 코드가 더 느리다는 것을 알 수 있다.
 너무 허무하다 이렇게 간단한 방법이 있는데 나는 왜 이 생각을 못했을까. 그래도 화는 안난다. 
 ```c
-#include<stidio.h>
+#include<stdio.h>
+#include<string.h>
 
-int convToInt(char c) {
-  static int diff = 1 -'1'; // == -48
-  return diff + c;
- }
- int main(void) {
-  char str[50];
-  int sum;
-  
-  printf("정수를 입력하세요 : " );
-  fgets(str, sizeof(str), stdin);
-  for(i=0;i<strlen(str);i++) {
-    if( '1' <= str[i] && str[i] <= 9 ) //문자열에 정수가 있으면 
-      sum += convToInt(str[i]); // 문자를 정수로 바꾼다
-  }
-  printf("정수들의 총 합 : %d\n", sum);
-  return 0;
+int ConvToInt(char c) {
+	static int diff = 1 - '1';
+	return c + diff;
+}
+int main(void) {
+	char str[50];
+	int len, i;
+	int sum=0;
+	
+	printf("문자열 입력 : ");
+	fgets(str, sizeof(str), stdin);
+	len=strlen(str);
+	for(i=0;i<len;i++) {
+		if('1'<=str[i] && str[i]<='9')
+			sum += ConvToInt(str[i]);
+	}
+	printf("숫자의 총합 :%d\n", sum);
+	
+	return 0;
+}
+
 ```
+
 
 ###### 3. str1과 str2에는 프로그램을 통해 입력받은 문자열을 저장하고 str3에는 str1을 복사한뒤 str2의 내용을 뒤에 덧붙이는 프로그램
 
