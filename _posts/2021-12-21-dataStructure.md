@@ -1,6 +1,6 @@
 ---
-title:  "자료구조 공부해보자"
-excerpt: "자료구조 공부 wit Java"
+title:  "자료구조를 공부해보자"
+excerpt: "자료구조 공부 with Java"
 
 categories:
   - Java
@@ -12,8 +12,6 @@ date: 2021-12-21
 last_modified_at: 2021-12-21
 
 ---
-
-목표 : C언어를 이용해 테트리스 만들기
 
 ### 배열 Array
 
