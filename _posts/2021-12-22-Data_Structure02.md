@@ -42,10 +42,10 @@ Node와 Branch를 이용해 싸이클을 이루지 않도록 구성된 자료구
 
   
 
-<div class="alert alert-block" style="border: 1px solid #455A64;background-color:#ECEFF1;padding:5px;font-size:0.9em;">
-<b><font size=3>이진 트리 : 노드의 최대 가지 수가 2인 트리<br>
-    이진 탐색 트리 : 루트 노드를 기준으로 왼쪽은 더 작은 값 오른쪽은 더 큰 값만을 저장하는 이진 트리</b><font>
-</div>
+
+이진 트리 : 노드의 최대 가지 수가 2인 트리
+이진 탐색 트리 : 루트 노드를 기준으로 왼쪽은 더 작은 값 오른쪽은 더 큰 값만을 저장하는 이진 트리
+
 
 
 
