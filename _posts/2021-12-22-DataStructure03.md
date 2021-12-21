@@ -1,6 +1,6 @@
 ---
-title:  "트리를 배워보자"
-excerpt: "Java로 이진탐색트리를 구현해보자"
+title:  "트리를 배워보자2"
+excerpt: "Java로 이진탐색트리를 구현해보자2"
 
 categories:
   - Java
