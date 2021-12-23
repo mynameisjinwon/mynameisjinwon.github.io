@@ -52,7 +52,9 @@ System.out.println(list1.size()); // 배열에 있는 데이터의 개수를 리
 ArryaList는 객체만을 다루기 때문에 premitive 자료형이 아닌 wrapper 클래스를 사용해야한다.
 
 *Array는 premitive 타입 뿐만 아니라 객체도 담을 수 있다.* 
-
+```java
+Integer[] arr4 = new Integer[5];
+```
 
 
 # 큐 Queue
