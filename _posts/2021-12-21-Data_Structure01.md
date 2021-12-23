@@ -246,7 +246,6 @@ public class SingleLinkedList<T> {
                 while(temp.next!=null) {
                     if(temp.next.getData()==data) {  
                         temp.next = temp.next.next; //삭제하는 노드의 직전노드의 next가 그 다음다음노드를 가리키게 한다.
-                        temp.next = null;
                         return;
                     } else {
                         temp = temp.next;                        
