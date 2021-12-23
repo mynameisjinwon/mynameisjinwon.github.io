@@ -12,7 +12,7 @@ date: 2021-12-21
 last_modified_at: 2021-12-21
 
 ---
-### 배열 Array
+# 배열 Array
 
 같은 자료형의 데이터를 효율적으로 관리하기 위해 사용하는 자료구조
 
@@ -28,7 +28,7 @@ int arr3 = {1, 2, 3, 4, 5};
 
 
 
-### ArrayList 클래스 
+# ArrayList 클래스 
 
 가변길이의 배열을 다룰 수 있는 기능을 제공하는 클래스 
 
@@ -53,7 +53,7 @@ ArryaList는 객체만을 다루기 때문에 premitive 자료형이 아닌 wrap
 
 
 
-### 큐 Queue
+# 큐 Queue
 
 가장 많이 쓰이는 자료구조 중 하나 (멀티태스킹을 위한 프로세스 스케쥴링을 구현하는데 사용한다.)
 
@@ -115,7 +115,7 @@ public class MyQueue<T> {
 
 
 
-### 스택 Stack
+# 스택 Stack
 
 큐와 함께 가장 많이 사용되는 자료구조 
 
@@ -175,7 +175,7 @@ class MyStack<T> {
 
 
 
-### 연결리스트 LinkedList
+# 연결리스트 LinkedList
 
 데이터가 추가될 때 자동으로 배열의 크기가 증가할 수 있게 하기위해 만들어진 자료구조
 
@@ -268,7 +268,7 @@ public class SingleLinkedList<T> {
 
 
 
-### 해쉬 테이블 HashTable
+# 해쉬 테이블 HashTable
 
 키에 데이터를 맵핑할 수 있는 자료구조
 
