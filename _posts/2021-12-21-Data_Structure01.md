@@ -45,6 +45,8 @@ list1.add(2);
 list1.remove(0); // 0은 인덱스 번호
 //데이터 갱신
 list1.set(0, 5); // 0번 인덱스의 데이터를 5로 바꿈, list에 데이터가 없으면 오류
+//size() 메소드
+System.out.println(list1.size()); // 배열에 있는 데이터의 개수를 리턴 
 ```
 
 ArryaList는 객체만을 다루기 때문에 premitive 자료형이 아닌 wrapper 클래스를 사용해야한다.
