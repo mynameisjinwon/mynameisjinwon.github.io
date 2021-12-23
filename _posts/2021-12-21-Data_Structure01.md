@@ -21,9 +21,9 @@ last_modified_at: 2021-12-21
 길이가 고정되어있다. 
 
 ```java
-int arr1 = new int[10];
-int arr2 = {5, 4, 3 ,2, 1};
-int arr3 = {1, 2, 3, 4, 5};
+int[] arr1 = new int[10];
+int arr2[] = {5, 4, 3 ,2, 1};
+int[] arr3 = {1, 2, 3, 4, 5};
 ```
 
 
