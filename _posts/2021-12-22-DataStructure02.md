@@ -12,7 +12,7 @@ date: 2021-12-21
 last_modified_at: 2021-12-21
 
 ---
-> # **트리** Tree
+# 트리 Tree
 
 Node와 Branch를 이용해 싸이클을 이루지 않도록 구성된 자료구조
 
