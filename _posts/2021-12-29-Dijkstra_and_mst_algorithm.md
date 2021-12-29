@@ -263,7 +263,7 @@ ___
 5. 인접 정점 리스트에 속해있지 않으면 연결된 정점을 인접 정점 리스트에 삽입한다.
 
 
-
+#### 프림 알고리즘을 구현해보자
 ```java
 import java.util.HashMap;
 import java.util.PriorityQueue;
