@@ -8,7 +8,7 @@ tags:
   - Java
   - Algorithm
  
-date: 2021-12-29
+date: 2021-12-28
 last_modified_at: 2021-12-29
 
 
@@ -28,9 +28,12 @@ last_modified_at: 2021-12-29
 
 ### 다익스트라 알고리즘 
 
-1. 첫 정점에 연결된 정점과 정점까지의 거리를 배열에 저장하고 시작 정점과 인접한 정점과 거리를 우선순위 큐에 삽입한다.
-2.  우선순위 큐에서 정점들을 가져와 시작 정점에서 각 정점으로 가는 거리와 현재 정점에서 각 정점으로 가는 거리를 비교한다.
-3. 거리가 더 짧을 경우 배열의 데이터를 갱신한다. 
+1. 시작 정점과 시작 정점에서부터 다른 정점들과의 거리를 저장하는 배열을 만든다.
+2. 배열의 초기화 : 시작 정점을 가리키는 배열에는 0을 저장하고 나머지 정점들과의 거리를 무한대로 초기화
+3. 우선순위큐에 시작 정점과 0을 저장한다. 
+4. 우선순위큐의 데이터를 가져온다.(처음은 시작 정점, 다음에는 거리가 짧은 정점)
+5. 현재 정점과 연결된 모든 정점들과의 거리를 배열에 저장한다. 
+6. 우선순위큐에 데이터가 없을 때 까지 4~5를 반복한다. 
 
 #### 다익스트라 알고리즘을 구현해보자
 
@@ -47,6 +50,7 @@ public class Dijkstra {
         HashMap<String, Integer> distances = new HasMap<String, Integer>();
 		//graph의 키값은 그래프의 모든 정점
         //각 정점들에 해당하는 값을 최대값으로 초기화한다.
+        //keySet()메소드는 해쉬맵의 모든 키값을 리턴한다.
         for(String key : graph.keySet()) {
             distances.put(key, Integer.MAX_VALUE);
         }
@@ -56,7 +60,7 @@ public class Dijkstra {
 		//다른 정점을 경유해서 가는 경우의 거리를 구하기위해 우선순위큐를 사용한다.
         PriorityQueue<Edge> pQueue = new PriorityQueue<Edge>();
         //처음에는 시작 정점과 0을 삽입한다.
-        pQueue.add(new Edge(distances.get(start)));
+        pQueue.add(new Edge(distances.get(start), start));
         
         //우선순위큐에 정점이 있으면 반복한다.
         while(pQueue.size()>0) {
@@ -113,8 +117,8 @@ public class Dijkstra {
 중복되는 요소가 없는 부분집합을 만드는 알고리즘
 
 1.  초기화 : n개의 원소가 개별집합으로 이루어지도록 한다.
-2. Union : 두 개별집합을 하나로 합친다.
-3. Find : 싸이클이 생기는 지 확인하기위해 각 집합의 루트노드를 확인한다. (부모가 같으면 같은 집합)
+2.  Union : 두 개별집합을 하나로 합친다.
+3.  Find : 싸이클이 생기는 지 확인하기위해 각 집합의 루트노드를 확인한다. (부모가 같으면 같은 집합)
 
 
 
@@ -178,7 +182,7 @@ public class KruskalPath {
     public ArrayList<Edge> kruskalFunc(ArrayList<String> vertices, ArrayList<Edge> edges) {
         //최소 신장트리를 저장할 변수
         ArrayList<Edge> mst = new ArrayList<Edge>();
-        Edge curEdge;
+        Edge curEdge = null;
         
         //초기화
         //모든 노드는 부모로 자기자신을 가리키고 rank값은 0으로 초기화한다.
@@ -187,7 +191,6 @@ public class KruskalPath {
         }
         //Edge의 weight 기준으로 오름차순 정렬
         Collections.sort(edges);
-        System.out.println(edges);
         
         //가중치가 낮은 간선부터 진행한다.
         for(int i=0;i<edges.size();i++){ 
@@ -238,4 +241,119 @@ public class Edge implements Comparable<Edge> {
     }
 }
 ```
+
+___
+
+### 프림 알고리즘 
+
+크루스컬 알고리즘은 간선들을 정렬후 가중치가 짧은 것들을 선택해 mst를 만드는 알고리즘
+
+프림 알고리즘은 시작 정점을 선택하고 해당 정점에 연결된 간선들 중 가중치가 짧은 것들을 선택하고 해당 간선에 연결된 정점을 연결된 정점리스트에 추가하고 연결된 간선들 중 하나를 선택하며 mst를 만든다.
+
+공통점으로는 두 알고리즘 모두 탐욕 알고리즘을 사용한다.
+
+
+
+#### 최소 신장 트리를 구하는 과정
+
+1. 특정 정점을 선택하고 인접 정점 리스트에 삽입한다.
+2. 선택한 정점에 연결된 간선들을 인접 간선 리스트에 삽입한다.
+3. 인접 간선 리스트에서 가중치가 짧은 간선을 추출하고 간선에 연결된 정점이 인접 정점 리스트에 속해있는지 확인한다.
+4. 인접 정점 리스트에 속해있을 경우 싸이클이 생기기때문에 해당 간선을 제외하고 다음 간선을 선택한다.
+5. 인접 정점 리스트에 속해있지 않으면 연결된 정점을 인접 정점 리스트에 삽입한다.
+
+
+
+```java
+import java.util.HashMap;
+import java.util.PriorityQueue;
+
+public class PrimPath {
+    public ArrayList<Edge> primFunc(String startNode, ArrayList<Edge> edges) {
+        Edge currentEdge, poppedEdge;
+        ArrayList<Edge> currentEdgeList, candidateEdgeList;
+        PriorityQueue<Edge> priorityQueue;
+        
+        //인접 노드 리스트 //mst  //인접 간선 리스트
+        ArrayList<String> connectedNodes = new ArrayList<String>();
+        ArrayList<Edge> mst = new ArrayList<Edge>();
+        HashMap<String, ArrayList<Edge>> adjacentEdges = 
+            new HashMap<String, ArrayList<Edge>>();
+        
+        //초기화
+        for(int i=0;i<edges.size();i++) {
+            //간선을 구성하는 노드들을 탐색해 해쉬맵의 키로 사용한다.
+            currentEdge = edges.get(i);
+            //해당 키가없으면 키값을 저장한다.
+            //특정노드에 연결된 간선들을 저장하기위한 adjacentEdges 해쉬맵을 초기화
+            //처음에는 키값(그래프에 속한 정점)만을 저장한다.
+            if(!adjacentEdges.containsKey(currentEdge.node1))
+                adjacentEdges.put(currentEdge.node1, new ArrayList<Edge>());
+            if(!adjacentEdges.containsKey(currentEdge.node2))
+                adjacentEdges.put(currentEdge.node2, new ArrayList<Edge>());
+        }
+        //노드마다 연결된 간선들을 추가
+        for(int i=0;i<edges.size();i++) {
+            currentEdge = edges.get(i); 
+            //현재 간선의 시작 정점에 연결된 간선들을 저장한다.
+            currentEdgeList = adjacentEdges.get(currentEdge.node1); 
+            currentEdgeList.add(
+                new Edge(currentEdge.weight, currentEdge.node1, currentEdge.node2));
+            //현재 간선의 끝 정점에 연결된 간선들을 저장한다.
+            currentEdgeList = adjacentEdges.get(currentEdge.node2);
+            currentEdgeList.add(
+                new Edge(currentEdge.weight, currentEdge.node2, currentEdge.node1));
+        }
+        
+        //인접 정점 리스트에 시작 정점을 저장
+        connectedNodes.add(startNode);
+        //특정 노드와 연결된 간선들을 저장한다.
+        //특정 노드에 연결된 간선이 없는 경우 에러발생을 막기위해
+        //getOrDefault메소드를 사용한다. 연결된 간선이 없으면 빈 어레이리스트를 리턴
+        candidateEdgeList = adjacentEdges.getOrDefault(startNode, new ArrayList<Edge>());
+        priorityQueue = new PriorityQueue<Edge>();
+        //우선 순위큐에 해당 정점에 연결된 간선들을 저장
+        //작은 값을 가장 먼저 꺼내기 때문에 거리가 짧은 간선을 먼저 선택할 수 있다.
+        for(int i=0;i<candidateEdgeList.size();i++) {
+            priorityQueue.add(candidateEdgeList.get(i));
+        }
+        
+        //우선순위큐에 간선이 있을 경우 반복
+        while(priorityQueue.size()>0) {
+            poppedEdge = priorityQueue.poll();
+            //간선에 연결된 다른 정점이 연결된 노드 집합에 없으면
+            //연결된 노드 집합에 해당 노드를 추가하고
+            //간선도 리스트에 추가하고 mst에도 추가
+            if(!connectedNodes.contains(poppedEdge.node2)) {
+                connectedNodes.add(poppedEdge.node2);
+                mst.add(new Edge(poppedEdge.weight, poppedEdge.node1, poppedEdge.node2));
+                candidateEdgeList = adjacentEdges.getOrDefault(poppedEdge.node2, 
+                                                               new ArrayList<Edge>());
+                for(int i=0;i<candidateEdgeList.size();i++) {
+                    //이미 connectedNodes에 들어가있는 정점에 대해서는 아무 작업도 하지않는다.
+                    if(!connectedNodes.contains(candidateEdgeList.get(i).node2))
+                        priorityQueue.add(candidateEdgeList.get(i));
+                }
+            }
+        }
+        return mst;
+    }
+}
+```
+
+#### 프림 알고리즘의 시간 복잡도
+
+모든 간선에 대해 반복작업을 하므로 O(E) * 힙구조를 사용해 삽입/삭제에 걸리는 시간 O(logE) = O(E*logE)
+
+
+
+### 개선된 프림 알고리즘
+
+기본적으로 프림알고리즘은 간선을 기준으로 mst를 구한다.
+
+개선된 프림 알고리즘은 정점을 기준으로 mst를 구한다.(다익스트라 알고리즘과 유사하다.)
+
+
+
+___
 
