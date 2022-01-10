@@ -41,7 +41,7 @@ public static void input() {
 
 nextLine()으로 문자열을 받을 때
 
-![nextLine()](img src="./img/errorFix/next_nextLine_diff01.png")
+![nextLine()](img src=./img/errorFix/next_nextLine_diff01.png)
 
 nextInt() 메소드는 정수를 읽는 메소드, 개행문자는 읽지 않는다. 
 
@@ -148,5 +148,5 @@ nextLine()메소드는 버퍼에 입력된 데이터를 개행문자 단위로 �
 
 #### 실행결과
 
-![doesithave](img src="./img/errorFix/next_nextLine_diff02.png")
+![doesithave](img src=./img/errorFix/next_nextLine_diff02.png)
 
