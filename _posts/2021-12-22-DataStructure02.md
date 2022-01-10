@@ -1,6 +1,6 @@
 ---
-title:  "트리를 배워보자"
-excerpt: "이제 곧 크리스마스"
+title:  "트리를 알아보자"
+excerpt: "자료구조 공부 with Java"
 
 categories:
   - Java
@@ -8,13 +8,11 @@ tags:
   - Java
   - DataStructure
   
-date: 2021-12-22
-last_modified_at: 2021-12-22
-
+date: 2021-12-21
+last_modified_at: 2021-12-21
 
 ---
-
-# **트리** Tree
+# 트리 Tree
 
 Node와 Branch를 이용해 싸이클을 이루지 않도록 구성된 자료구조
 
@@ -22,31 +20,26 @@ Node와 Branch를 이용해 싸이클을 이루지 않도록 구성된 자료구
 
 
 
-#### 트리 용어
+> #### 트리 용어
 
 - Node : 트리에서 데이터를 저장하는 공간
-
 - Root Node : 트리의 맨 위에있는 노드
-
 - Level : 트리의 깊이 (루트노드는 level0)
-
 - Parent Node : 어떤 노드의 상위 노드 
-
 - Child Node : 어떤 노드의 하위 노드
-
 - Leaf Node : 자식이 없는 노드 
-
 - Sibling : 동일한 부모를 가지고 있는 노드
-
 - Depth : 트리에서 노드가 가질 수 있는 최대 level
 
-  
 
-<div class="alert alert-block" style="border: 1px solid #455A64;background-color:#ECEFF1;padding:5px;font-size:0.9em;">
-<b><font size=3>이진 트리 : 노드의 최대 가지 수가 2인 트리<br>
-    이진 탐색 트리 : 루트 노드를 기준으로 왼쪽은 더 작은 값 오른쪽은 더 큰 값만을 저장하는 이진 트리</b><font>
-</div>
 
+
+이진 트리 : 노드의 최대 가지 수가 2인 트리
+이진 탐색 트리 : 루트 노드를 기준으로 왼쪽은 더 작은 값 오른쪽은 더 큰 값만을 저장하는 이진 트리
+
+
+
+___
 
 
 복잡한 코드를 작성 할 때는 가능한 경우를 나누어야 한다.

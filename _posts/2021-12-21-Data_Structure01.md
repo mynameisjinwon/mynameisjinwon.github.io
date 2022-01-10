@@ -9,10 +9,10 @@ tags:
   - DataStructure
   
 date: 2021-12-21
-last_modified_at: 2021-12-21
+last_modified_at: 2021-12-23
 
 ---
-### 배열 Array
+# 배열 Array
 
 같은 자료형의 데이터를 효율적으로 관리하기 위해 사용하는 자료구조
 
@@ -21,9 +21,9 @@ last_modified_at: 2021-12-21
 길이가 고정되어있다. 
 
 ```java
-int arr1 = new int[10];
-int arr2 = {5, 4, 3 ,2, 1};
-int arr3 = {1, 2, 3, 4, 5};
+int[] arr1 = new int[10];
+int arr2[] = {5, 4, 3 ,2, 1};
+int[] arr3 = {1, 2, 3, 4, 5};
 ```
 
 
@@ -45,15 +45,20 @@ list1.add(2);
 list1.remove(0); // 0은 인덱스 번호
 //데이터 갱신
 list1.set(0, 5); // 0번 인덱스의 데이터를 5로 바꿈, list에 데이터가 없으면 오류
+//size() 메소드
+System.out.println(list1.size()); // 배열에 있는 데이터의 개수를 리턴 
 ```
 
 ArryaList는 객체만을 다루기 때문에 premitive 자료형이 아닌 wrapper 클래스를 사용해야한다.
 
 *Array는 premitive 타입 뿐만 아니라 객체도 담을 수 있다.* 
+```java
+Integer[] arr4 = new Integer[5];
+```
 
 
 
-### 큐 Queue
+# 큐 Queue
 
 가장 많이 쓰이는 자료구조 중 하나 (멀티태스킹을 위한 프로세스 스케쥴링을 구현하는데 사용한다.)
 
@@ -115,7 +120,8 @@ public class MyQueue<T> {
 
 
 
-### 스택 Stack
+
+# 스택 Stack
 
 큐와 함께 가장 많이 사용되는 자료구조 
 
@@ -175,7 +181,8 @@ class MyStack<T> {
 
 
 
-### 연결리스트 LinkedList
+
+# 연결리스트 LinkedList
 
 데이터가 추가될 때 자동으로 배열의 크기가 증가할 수 있게 하기위해 만들어진 자료구조
 
@@ -239,7 +246,6 @@ public class SingleLinkedList<T> {
                 while(temp.next!=null) {
                     if(temp.next.getData()==data) {  
                         temp.next = temp.next.next; //삭제하는 노드의 직전노드의 next가 그 다음다음노드를 가리키게 한다.
-                        temp.next = null;
                         return;
                     } else {
                         temp = temp.next;                        
@@ -268,7 +274,8 @@ public class SingleLinkedList<T> {
 
 
 
-### 해쉬 테이블 HashTable
+
+# 해쉬 테이블 HashTable
 
 키에 데이터를 맵핑할 수 있는 자료구조
 
