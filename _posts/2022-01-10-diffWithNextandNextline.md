@@ -41,7 +41,8 @@ public static void input() {
 
 nextLine()으로 문자열을 받을 때
 
-![nextLine](./img/errorFix/next_nextLine_diff01.png)
+![next_nextLine_diff01](https://user-images.githubusercontent.com/32839363/148740356-9e29928b-4e96-46b6-9497-02f9b3004e48.png)
+
 
 nextInt() 메소드는 정수를 읽는 메소드, 개행문자는 읽지 않는다. 
 
