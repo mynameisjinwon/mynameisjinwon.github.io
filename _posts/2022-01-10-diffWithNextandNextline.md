@@ -149,5 +149,5 @@ nextLine()메소드는 버퍼에 입력된 데이터를 개행문자 단위로 �
 
 #### 실행결과
 
-![doesithave](./img/errorFix/next_nextLine_diff02.png)
+![next_nextLine_diff02](https://user-images.githubusercontent.com/32839363/148740534-e2c2d387-7e87-42c7-bda9-fd93fddc8032.png)
 
