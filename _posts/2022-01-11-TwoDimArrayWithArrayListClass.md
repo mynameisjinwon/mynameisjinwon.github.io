@@ -3,9 +3,9 @@ title:  "ArrayList로 2차원배열을 선언해보자"
 excerpt: "2차원배열을 ArrayList로 선언해보자"
 
 categories:
-  - java
+  - Java
 tags:
-  - java
+  - Java
   - DataStructure
  
 date: 2022-01-11
