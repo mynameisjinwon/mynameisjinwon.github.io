@@ -48,5 +48,5 @@ Variable expected 에러가 발생했다.
 
 메소드의 호출 결과로 리턴되는 값에는 새로운 값을 할당할 수 없다.
 
-[링크].(https://stackoverflow.com/questions/47741603/variable-expected-java-vector)
+[참고한 페이지](https://stackoverflow.com/questions/47741603/variable-expected-java-vector)
 
