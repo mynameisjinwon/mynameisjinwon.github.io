@@ -36,7 +36,7 @@ public static void input() {
 arr.get(len).add(str);
 ```
 
-이런 코드를 짰는데 out of bound exception이 발생했다. 
+이런 코드를 짰는데 out of bounds exception이 발생했다. 
 
 add() 메소드를 통해서 비어있는 행에 접근을 하려해서 그런것이 아닐까?
 
