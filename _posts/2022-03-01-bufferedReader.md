@@ -65,4 +65,4 @@ for(int i=1;i<N+1;i++) {
 
 ## 참고자료
 
-- https://jhnyang.tistory.com/92
+- [https://jhnyang.tistory.com/92](https://jhnyang.tistory.com/92)
