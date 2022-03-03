@@ -80,7 +80,6 @@ public class Main {
     public static void solution() {
         StringBuilder sb = new StringBuilder();
         A = new int[1000001];
-        A[1] = 1; // 1 은 소수가 아니다.
 
         //에라토스테네스의 체 알고리즘을 사용해 소수가 아닌 인덱스에는 1을 넣는다.
         //알고리즘을 제대로 구현했는지는 모르겠다.
