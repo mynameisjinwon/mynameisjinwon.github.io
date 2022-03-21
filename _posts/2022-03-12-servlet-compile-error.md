@@ -54,7 +54,42 @@ last_modified_at: 2022-03-18
 
 
 
+#### cmd 에서 classpath 추가하기
 
+##### 현재 classpath 출력
+
+- 지정된 classpath가 없으면 %classpath% 가 출력된다.
+
+```
+echo %classpath%
+```
+
+
+
+##### classpath 지정하기
+
+- 현재 디렉토리(.)를 classpath로 지정(할 필요는 없다.)
+
+```
+set classpath=.
+```
+
+- 현재 디렉토리와 상위 디렉토리를 classpath로 지정
+- 세미콜론(;)으로 패스를 구분한다.
+
+```
+set classpath=.;..
+```
+
+- Java EE 라이브러리가 저장된 톰캣의 lib 디렉토리를 클래스패스로 지정
+
+```
+set classpath=.;C:\Users\g_seismic\Documents\apache-tomcat-9.0.60\lib\servlet-api.jar
+```
+
+
+
+- cmd 창에서 컴파일하는 경우가 많지는 않지만 servlet 실습에서는 자주 쓰일 것 같아 시스템변수로 설정해두었다.
 
 
 
